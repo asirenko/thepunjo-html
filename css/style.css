@@ -549,29 +549,24 @@ Recent Story
 -------------------------------- */
 .recent-story {
   width: 90%;
-  max-width: 830px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 120px 0;
 }
 
 .recent-story__article {
-  float: left;
-  width: calc(100% / 830 * 405);
-  margin-right: 20px;
-
+  margin-bottom: 20px;
   border: 1px solid #ebebeb; 
 }
 .recent-story__article:last-of-type {
-  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .recent-story__article__list {
-  /*float: left;*/
-  padding: 0 0 20px 20px;
+  padding: 20px;
 }
 
 .recent-story__article__list__date {
-  padding-top: 20px;
   color: #7e7d7d;
   font-family: "Raleway", Arial, sans-serif;
   font-size: 12px;
@@ -582,14 +577,8 @@ Recent Story
 }
 
 .recent-story__article__list__title {
-  margin-top: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: normal;
+  margin-top: 4px;
   color: #f39c12;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .recent-story__article__list__description {
@@ -598,22 +587,101 @@ Recent Story
   color: #858282;
 }
 
+.button__learn-morli {
+  display:inline-block;
+}
 .button__learn-more {
   color: #ffffff;
   font-family: Arial, sans-serif;
-  font-size: 12px;
-  padding: 10px 12px 10px 12px;
+  font-size: 14px;
+  padding: 12px 20px 12px 20px;
   background-color: #282828;
 }
-.button__learn-more:hover {
+/* overflow: hidden;
   background-color: #aaaaaa;
+} */
+
+.pagination {
+  /* position: relative; */
+  margin-top: 60px;
+  text-align: center;
+  clear: both;
+  font-size:0;
+  line-height:0;
+}
+.pagination li {
+  display:inline-block;
+  margin:0 3px;
+}
+.pagination a {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  background-color: #b7b7b7;
+  text-indent:-99999px;
+  overflow: hidden;
+}
+.pagination a:hover {
+  background:red;
+}
+.recent-story__pagination::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 0;
+  right: 16px;
+  background-color: #414141;
+  border-radius: 50px;
+}
+.recent-story__pagination::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 0;
+  left: 16px;
+  background-color: #b7b7b7;
+  border-radius: 50px;
 }
 
-.recent-story__article__image:first-of-type {
-  float: right;
-  max-width: 170px;
-  margin-left: 20px;
-  height: 100%;
+@media only screen and (min-width: 768px) {
+  .recent-story__article {
+    float: left;
+    width: calc(100% / 830 * 405);
+    margin-right: 20px;
+  }
+
+  .recent-story__article:last-of-type {
+    margin-right: 0;
+  }
+
+  .recent-story__article__list {
+    /*float: left;*/
+    padding: 0 0 20px 20px;
+  }
+
+  .recent-story__article__list__date {
+    padding-top: 20px;
+  }
+
+  .recent-story__article__image:last-of-type {
+    /* float: left; */
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .recent-story__article__image:first-of-type {
+/*     float: right;
+    max-width: 200px;
+    margin-left: 20px; */
+  }
+
+  .recent-story__pagination {
+    position: static;
+  }
 }
 
 
