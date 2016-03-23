@@ -80,6 +80,11 @@ h3 {
   overflow: hidden;
 }
 
+.button {
+  display: inline-block;
+  text-align: center;
+}
+
 /* -------------------------------- 
 
 About section
@@ -402,9 +407,9 @@ My Work Section
 
 -------------------------------- */
 .portfolio {
-  padding: 120px 0;
   width: 90%;
   margin: 0 auto;
+  padding-top: 120px;
 }
 
 .portfolio__nav {
@@ -537,8 +542,79 @@ My Work Section
   }
 }
 
+/* -------------------------------- 
 
+Recent Story
 
+-------------------------------- */
+.recent-story {
+  width: 90%;
+  max-width: 830px;
+  margin: 0 auto;
+  padding: 120px 0;
+}
+
+.recent-story__article {
+  float: left;
+  width: calc(100% / 830 * 405);
+  margin-right: 20px;
+
+  border: 1px solid #ebebeb; 
+}
+.recent-story__article:last-of-type {
+  margin-right: 0;
+}
+
+.recent-story__article__list {
+  /*float: left;*/
+  padding: 0 0 20px 20px;
+}
+
+.recent-story__article__list__date {
+  padding-top: 20px;
+  color: #7e7d7d;
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 12px;
+  line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-story__article__list__title {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: normal;
+  color: #f39c12;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-story__article__list__description {
+  margin: 10px 0 20px 0;
+  font-size: 14px;
+  color: #858282;
+}
+
+.button__learn-more {
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  padding: 10px 12px 10px 12px;
+  background-color: #282828;
+}
+.button__learn-more:hover {
+  background-color: #aaaaaa;
+}
+
+.recent-story__article__image:first-of-type {
+  float: right;
+  max-width: 170px;
+  margin-left: 20px;
+  height: 100%;
+}
 
 
 
