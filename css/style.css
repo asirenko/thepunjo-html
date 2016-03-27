@@ -29,7 +29,7 @@ a {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 p {
@@ -67,17 +67,22 @@ h3 {
 .title-border {
   max-width: 404px;
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   padding-bottom: 18px;
   border-bottom: 1px solid #f39c12;
   text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .title-border {
+    margin-bottom: 60px;
+  }
 }
 
 .clearfix::after {
   content: '';
   clear: both;
   display: table;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .button {
@@ -93,7 +98,7 @@ About section
 -------------------------------- */
 .about {
   width: 90%;
-  margin: 120px auto;
+  margin: 60px auto;
 }
 
 .about__aside__description {
@@ -104,7 +109,7 @@ About section
 }
 
 .about__skills {
-  margin-top: 45px;
+  margin-top: 10px;
 }
 
 .about__skills__progress {
@@ -173,6 +178,7 @@ About section
 @media only screen and (min-width: 1100px) {
   .about {
     width: 100%;
+    margin: 120px auto;
   }
   
   .about__image {
@@ -187,6 +193,10 @@ About section
     width: 50%; 
     padding: 0 calc(100% / 1170 * 80);
   }
+
+  .about__skills {
+    margin-top: 45px;
+  }
 }
 
 /* -------------------------------- 
@@ -196,7 +206,7 @@ My Service Section
 -------------------------------- */
 .service {
   width: 90%;
-  margin: 120px auto;
+  margin: 60px auto;
 }
 
 .service__list {
@@ -287,6 +297,7 @@ My Service Section
 @media only screen and (min-width: 768px) {
   .service {
     max-width: 830px;
+    margin: 120px auto;
   }
 
   .service__list {
@@ -308,7 +319,7 @@ My Statistic Section
 -------------------------------- */
 .statistic {
   position: relative;
-  padding: 120px 0;
+  padding: 60px 0;
   height: 100%;
 
   background: url('../images/pic/pic-statistic.png') no-repeat center center / cover;
@@ -381,6 +392,10 @@ My Statistic Section
 }
 
 @media only screen and (min-width: 768px) {
+  .statistic {
+    padding: 120px 0;
+  }
+
   .statistic__unit {
     height: 184px;
   }
@@ -410,7 +425,7 @@ My Work Section
 .portfolio {
   width: 90%;
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 60px;
 }
 
 .portfolio__nav {
@@ -480,11 +495,16 @@ My Work Section
   opacity: 1;
 }
 
+.portfolio__list__item__pic {
+  display: block;
+  width: 100%;
+}
+
 .portfolio__list__item__caption {
   position: absolute;
   width: 100%;
   padding: 20px;
-  bottom: 2px;
+  bottom: 0;
   left: 0;
   background-color: rgba(55, 55, 55, 0.7);
 }
@@ -501,6 +521,10 @@ My Work Section
 }
 
 @media only screen and (min-width: 768px) {
+  .portfolio {
+    padding-top: 120px;
+  }
+
   .portfolio__list {
     margin-top: 60px;
   }
@@ -552,7 +576,7 @@ Recent Story
   width: 90%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 120px 0;
+  padding: 60px 0;
 }
 
 .recent-story__article {
@@ -561,6 +585,16 @@ Recent Story
 }
 .recent-story__article:last-of-type {
   margin-bottom: 0;
+}
+
+.recent-story__article__wrapper {
+  
+}
+
+.recent-story__article__wrapper__image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .recent-story__article__list {
@@ -585,7 +619,7 @@ Recent Story
 .recent-story__article__list__description {
   margin: 10px 0 20px 0;
   font-size: 14px;
-  color: #858282;
+  color: #686767;
 }
 
 .button__learn-more {
@@ -600,7 +634,7 @@ Recent Story
 }
 
 .recent-story__pagination__list {
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
   font-size: 0;
   line-height: 0;
@@ -622,10 +656,38 @@ Recent Story
 }
 
 .recent-story__pagination__list__item a:hover {
-  background-color: red;
+  background-color: #383838;
 }
 
 @media only screen and (min-width: 768px) {
+  .recent-story h2 {
+    margin-bottom: 40px;
+  }
+
+  .recent-story__article {
+    width: 100%;
+    margin-right: 0;
+  }
+    .recent-story__article__wrapper {
+    max-width: 161px;
+  }
+
+  .recent-story__article:nth-of-type(1) .recent-story__article__wrapper {
+    float: right;
+    margin-left: 20px;
+  }
+
+  .recent-story__article:nth-of-type(2) .recent-story__article__wrapper {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .recent-story {
+    padding: 120px 0;
+  }
+
   .recent-story__article {
     float: left;
     width: calc(100% / 830 * 405);
@@ -636,27 +698,13 @@ Recent Story
   }
 
   .recent-story__article__wrapper {
-    float: right;
     max-width: 200px;
-    margin-left: 20px;
-  }
-
-  .recent-story__article__wrapper__image {
-    display: block;
-    width: 100%;
-  }
-
-  .recent-story__article__list {
-    padding: 0 0 20px 20px;
-  }
-
-  .recent-story__article__list__date {
-    padding-top: 20px;
   }
 
   .recent-story__pagination__list {
-    clear: both;
+    margin-top: 60px;
   }
+
 }
 
 /* -------------------------------- 
@@ -665,7 +713,7 @@ Blog
 
 -------------------------------- */
 .blog {
-  padding: 40px 0;
+  padding: 60px 0;
   background-color: #262626;
 }
 
@@ -680,7 +728,7 @@ Blog
 }
 
 .blog__article__aside h2 {
-  margin-top: 40px;
+  margin-top: 60px;
   color: #ffffff;
 }
 
