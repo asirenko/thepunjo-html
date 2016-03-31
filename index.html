@@ -199,19 +199,19 @@
 		<div class="statistic__unit">
 			<div class="statistic__unit__item">
 				<p class="statistic__unit__item__number">4609</p>
-				<i class="statstic__unit__item__ic laptop"></i>
+				<i class="statstic__unit__item__bg ic-laptop"></i>
 				<h3 class="statistic__unit__item__text">Finished projects</h3>
 			</div>
 
 			<div class="statistic__unit__item">
 				<p class="statistic__unit__item__number">3470</p>
-				<i class="statstic__unit__item__ic user"></i>
+				<i class="statstic__unit__item__bg ic-user"></i>
 				<h3 class="statistic__unit__item__text">Happy Client</h3>
 			</div>
 
 			<div class="statistic__unit__item">
 				<p class="statistic__unit__item__number">2908</p>
-				<i class="statstic__unit__item__ic awards"></i>
+				<i class="statstic__unit__item__bg ic-awards"></i>
 				<h3 class="statistic__unit__item__text">Awards</h3>
 			</div>
 		</div>
@@ -299,8 +299,8 @@
 		</h2>
 
 		<div class="clearfix">
-			<article class="recent-story__article">
-				<div class="recent-story__article__wrapper">
+			<article class="recent-story__article float-left">
+				<div class="recent-story__article__wrapper float-right-img">
 					<img class="recent-story__article__wrapper__image" src="images/pic/pic-recent_story.png" alt="Image" />
 				</div>
 
@@ -314,8 +314,8 @@
 				</div>
 			</article>
 
-			<article class="recent-story__article">
-				<div class="recent-story__article__wrapper">
+			<article class="recent-story__article float-right">
+				<div class="recent-story__article__wrapper float-left-img">
 					<img class="recent-story__article__wrapper__image" src="images/pic/pic-recent_story2.png" alt="Image" />
 				</div>
 
@@ -330,10 +330,10 @@
 			</article>
 		</div>
 
-		<ul class="recent-story__pagination__list">
-			<li class="recent-story__pagination__list__item"><a href="#0">1</a></li>
-			<li class="recent-story__pagination__list__item"><a href="#0">2</a></li>
-			<li class="recent-story__pagination__list__item"><a href="#0">3</a></li>
+		<ul class="slider__pagination__list">
+			<li class="slider__pagination__list__item active"><a href="#0">1</a></li>
+			<li class="slider__pagination__list__item"><a href="#0">2</a></li>
+			<li class="slider__pagination__list__item"><a href="#0">3</a></li>
 		</ul>
 	</section>
 
@@ -412,6 +412,64 @@
 			<li class="slider__pagination__list__item"><a href="#0">2</a></li>
 			<li class="slider__pagination__list__item"><a href="#0">3</a></li>
 		</ul>
+	</section>
+
+	<!-- Twitter Feed -->
+	<section class="twitter-feed">
+		<h2 class="title-border">
+			<span class="title">Latest tweet</span>
+		</h2>
+
+		<p class="twitter-feed__description">
+			RT <span>@SonyTV:</span> Do you know what's happening on Independence Day? Tune in to Piku this 15th August at 8 PM. <span>#FreeToWatchPiku http://t.co/1b2tWh…</span> Deepika Padukone
+		</p>
+	</section>
+
+	<!-- Contact -->
+	<section class="contact">
+		<h2 class="title-border">
+			<span class="title">Get in touch</span>
+		</h2>
+<!-- 		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vita eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum.
+		</p> -->
+
+		<form class="contact-form">
+			<fieldset>
+				<legend>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vita eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum.
+				</legend>
+
+				<div>
+					<label class="label" for="name">Name</label>
+					<input class="user" type="text" name="name" id="name" required="">
+				</div>
+
+				<div>
+					<label class="label" for="subject">Subject</label>
+					<input class="subject" type="text" name="subject" id="subject" required="">
+				</div>
+
+				<div>
+					<label class="label" for="time">Time <span>( From 9am to 5pm )</span></label>
+					<input class="time" type="text" name="time" id="time" required="">
+				</div>
+
+				<div>
+					<label class="label" for="email">Email</label>
+					<input class="email error" type="email" name="email" id="email" required="">
+				</div>
+
+				<div>
+					<label class="label" for="textarea">Your Message</label>
+					<textarea class="message" name="textarea" id="textarea" required=""></textarea>
+				</div>
+
+				<div>
+					<input type="submit" value="Make Request">
+				</div>
+			</fieldset>
+		</form>
 	</section>
 </main>
 </body>

@@ -91,6 +91,40 @@ h3 {
   transition: background-color .2s linear;
 }
 
+.slider__pagination__list {
+  margin-top: 40px;
+
+  text-align: center;
+  font-size: 0;
+}
+
+.slider__pagination__list__item {
+  display: inline-block;
+}
+
+.slider__pagination__list__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.slider__pagination__list__item a {
+  display: block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background-color: #b7b7b7;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.slider__pagination__list__item.active a {
+  background-color: #383838;
+}
+
+.slider__pagination__list__item a:hover {
+  background-color: #383838;
+}
+
 /* -------------------------------- 
 
 About section
@@ -357,17 +391,17 @@ My Statistic Section
   text-align: center;
 }
 
-.laptop {
+.ic-laptop {
   background: url('../images/ic/svg/ic-laptop.svg');
 }
-.user {
+.ic-user {
   background: url('../images/ic/svg/ic-user.svg');
 }
-.awards {
+.ic-awards {
   background: url('../images/ic/svg/ic-awards.svg');
 }
 
-.statstic__unit__item__ic {
+.statstic__unit__item__bg {
   display: inline-block;
   width: 70px;
   height: 70px;
@@ -587,6 +621,11 @@ Recent Story
   margin-bottom: 0;
 }
 
+.recent-story__article__wrapper {
+  height: 200px;
+  overflow: hidden;
+}
+
 .recent-story__article__wrapper__image {
   display: block;
   width: 100%;
@@ -629,32 +668,6 @@ Recent Story
   background-color: #aaaaaa;
 }
 
-.recent-story__pagination__list {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 0;
-  line-height: 0;
-}
-
-.recent-story__pagination__list li {
-  display: inline-block;
-  margin: 0 2px;
-}
-
-.recent-story__pagination__list__item a {
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50px;
-  background-color: #b7b7b7;
-  text-indent:-99999px;
-  overflow: hidden;
-}
-
-.recent-story__pagination__list__item a:hover {
-  background-color: #383838;
-}
-
 @media only screen and (min-width: 768px) {
   .recent-story h2 {
     margin-bottom: 40px;
@@ -664,20 +677,22 @@ Recent Story
     width: 100%;
     margin-right: 0;
   }
-    .recent-story__article__wrapper {
+  .recent-story__article__wrapper {
     max-width: 161px;
+    height: auto;
+    overflow: visible;
   }
 
-  .recent-story__article:nth-of-type(1) .recent-story__article__wrapper {
-    float: right;
-    margin-left: 20px;
-  }
-
-  .recent-story__article:nth-of-type(2) .recent-story__article__wrapper {
+  .float-left-img {
     float: left;
     margin-right: 20px;
   }
-}
+
+  .float-right-img {
+    float: right;
+    margin-left: 20px;
+  }
+} 
 
 @media only screen and (min-width: 1100px) {
   .recent-story {
@@ -687,10 +702,9 @@ Recent Story
   .recent-story__article {
     float: left;
     width: calc(100% / 960 * 470);
-    margin-right: 20px;
   }
-  .recent-story__article:last-of-type {
-    margin-right: 0;
+  .recent-story__article:last-child {
+    float: right;
   }
 
   .recent-story__article__wrapper {
@@ -781,11 +795,6 @@ Clients Feedback
 
 }
 
-.testimonial__quote {
-  /* width: 100%; */
-  /* display: inline-block; */
-}
-
 .testimonial__quote:not(:last-child) {
   margin-bottom: 40px;
 }
@@ -845,40 +854,6 @@ Clients Feedback
   font-style: italic;
 }
 
-.slider__pagination__list {
-  margin-top: 40px;
-
-  text-align: center;
-  font-size: 0;
-}
-
-.slider__pagination__list__item {
-  display: inline-block;
-}
-
-.slider__pagination__list__item:not(:last-child) {
-  margin-right: 4px;
-}
-
-.slider__pagination__list__item a {
-  display: block;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  background-color: #b7b7b7;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-}
-
-.slider__pagination__list__item.active a {
-  background-color: #383838;
-}
-
-.slider__pagination__list__item a:hover {
-  background-color: #383838;
-}
-
 @media only screen and (min-width: 768px) {
   .testimonial {
     padding: 120px 0;
@@ -888,9 +863,8 @@ Clients Feedback
     float: left;
     width: calc(100% / 960 * 470);
   }
-
-  .testimonial__quote:not(:last-child) {
-    margin-right: 20px;
+  .testimonial__quote:last-child {
+    float: right;
   }
 
   .slider__pagination__list {
@@ -898,10 +872,97 @@ Clients Feedback
   }
 }
 
+/* -------------------------------- 
 
+Twitter Feed
 
+-------------------------------- */
+.twitter-feed {
+  position: relative;
+  padding: 60px 0;
+  background: url('../images/pic/pic-twitter-feed.png') no-repeat 50% 50% / cover;
+}
 
+.twitter-feed .title-border {
+  position: relative;
+  color: #ffffff;
+}
 
+.twitter-feed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+
+}
+
+.twitter-feed__description {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+}
+
+.twitter-feed__description span {
+  color: #f39c12;
+}
+
+@media only screen and (min-width: 768px) {
+    .twitter-feed {
+      padding: 120px 0;
+    }
+}
+
+/* -------------------------------- 
+
+Contact
+
+-------------------------------- */
+.contact {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+
+  padding: 60px 0;
+}
+
+.contact-form legend {
+  margin-bottom: 40px;
+}
+
+.contact-form input {
+  border-bottom: 1px solid #b0b0b0;
+  padding: 50px 0;
+}
+
+.contact-form input:focus {
+  border-bottom-color: #f39c12;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  color: #383838;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact {
+    padding: 120px 0;
+  }
+}
 
 
 
