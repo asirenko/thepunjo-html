@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins
+// -----------------------------------------------------------------------------
+
+// Breakpoints
+
+$S: 480px
+$M: 768px
+$L: 1100px
+
+// Media queries
+
+=MQ($canvas)
+	@if $canvas == S
+		@media only screen and (min-width: $S)
+			@content
+
+	@else if $canvas == M
+		@media only screen and (min-width: $M)
+			@content
+
+	@else if $canvas == L
+		@media only screen and (min-width: $L)
+			@content
+
+// Center vertically and/or horizontally an absolute positioned element
+
+=center($xy:xy)
+	@if $xy == xy
+		left: 50%
+		top: 50%
+		bottom: auto
+		right: auto
+		+transform(translateX(-50%) translateY(-50%))
+
+	@else if $xy == x
+		left: 50%
+		right: auto
+		+transform(translateX(-50%))
+
+	@else if $xy == y
+		top: 50%
+		bottom: auto
+		+transform(translateY(-50%))
+
+// Antialiasing mode font rendering
+
+=font-smoothing
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+// Transitions
+
+=transition($args...)
+	-webkit-transition: $args
+	-moz-transition: $args
+	-ms-transition: $args
+	-o-transition: $args
+	transition: $args
+
+// Transform
+
+=transform($transforms)
+	-moz-transform: $transforms
+	-o-transform: $transforms
+	-ms-transform: $transforms
+	-webkit-transform: $transforms
+	transform: $transforms

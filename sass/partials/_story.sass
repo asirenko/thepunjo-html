@@ -1,0 +1,74 @@
+/* ----------------------------------------------------------------------------- */
+/* Recent Story
+/* ----------------------------------------------------------------------------- */
+.recent-story
+	@extend .container
+	max-width: $max-width
+	margin-top: -23px
+
+	&__article 
+		margin-bottom: 20px
+		border: 1px solid $light-grey
+
+		&:last-of-type
+			margin-bottom: 0
+
+		+MQ(M)
+			width: 100%
+			margin-right: 0
+
+		+MQ(L)
+			float: left
+			width: (100% / 960 * 470)
+	
+			&:last-child
+				float: right
+
+		&__wrapper 
+			height: 200px
+			overflow: hidden
+
+			+MQ(M)
+				max-width: 161px
+				height: auto
+				overflow: visible
+
+			+MQ(L)
+				max-width: 200px
+
+			&__image 
+				display: block
+				width: 100%
+				height: auto
+
+		&__list 
+			padding: 20px
+
+			&__date 
+				color: $font-color
+				font-family: $font-family-raleway
+				font-size: $font-size-small
+				line-height: normal
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+
+			&__title 
+				margin-top: 4px
+				color: $primary-color
+				+font-smoothing
+
+			&__description 
+				margin: 10px 0 20px 0
+				font-size: $font-size-base
+				color: $font-color
+				+font-smoothing
+
++MQ(M)
+	.float-left-img 
+		float: left
+		margin-right: 20px
+
+	.float-right-img 
+		float: right
+		margin-left: 20px

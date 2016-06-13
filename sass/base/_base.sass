@@ -1,0 +1,108 @@
+/* ----------------------------------------------------------------------------- */
+/* This file contains very basic styles */ 
+/* ----------------------------------------------------------------------------- */
+
+/* Set up a decent box model on the root element */
+
+html, body
+	height: 100%
+
+html
+	font-size: $font-size-base
+	box-sizing: border-box
+
+
+/* Make all elements from the DOM inherit from the parent box-sizing */
+
+*, *:before, *:after
+	box-sizing: inherit
+
+
+/* Basic typography style */
+
+html
+	font-size: 62.5%
+
+body
+	font-size: $font-size-base
+	font-family: $font-family-arial
+	color: $font-color
+	background-color: $white
+
+
+/* Basic styles for links */
+
+a
+	color: $link-color
+	text-decoration: none
+	&:hover
+		// color: $link-hover-color
+
+
+/* Make images responsive */
+
+img
+	max-width: 100%
+
+
+/* Basic styles for h1, h2, h3, h4, h5, h6 */
+
+h1
+	color: $primary-color
+	font-family: $font-family-raleway
+	font-size: $font-size-h2
+	font-weight: $font-weigh-300
+	text-transform: uppercase
+	+font-smoothing
+
+	+MQ(L)
+		font-size: $font-size-h1
+
+h2
+	color: $secondary-color
+	font-family: $font-family-raleway
+	font-size: $font-size-h2
+	font-weight: $font-weigh-700
+	line-height: $line-height-24
+	text-transform: uppercase
+	+font-smoothing
+
+h3
+	color: $font-color
+	font-family: $font-family-raleway
+	font-size: $font-size-h3
+	font-weight: $font-weigh-700
+	line-height: $line-height-24
+	text-transform: uppercase
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+	+font-smoothing
+
+
+/* Basic styles for paragraphs */
+
+p
+	color: $font-color
+	font-size: $font-size-base
+	font-weight: $font-weigh-400
+	line-height: $line-height-24
+	+font-smoothing
+
+
+/* Title */
+
+.title
+	padding-bottom: 9px
+	border-bottom: 3px solid $primary-color
+
+	&-border
+		max-width: 404px
+		margin: 0 auto
+		margin-bottom: 52px
+		padding-bottom: 18px
+		border-bottom: 1px solid $primary-color
+		text-align: center
+
+		+MQ(M)
+			margin-bottom: 60px

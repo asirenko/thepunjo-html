@@ -16,7 +16,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Raleway:700,300' rel='stylesheet' type='text/css'>
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Favicon -->
@@ -24,11 +23,55 @@
 </head>
 <body>
 
+<!-- Header -->
+<header class="header">
+	<div class="header__main">
+		<div class="header__main__center">
+			<a class="logo" href="#0">
+				the<b><span>P</span>unjo</b>
+			</a>
+
+			<nav class="nav">
+				<div class="nav__list">
+					<a class="nav__list__item active" href="#home">Home</a>
+					<a class="nav__list__item" href="#about">About</a>
+					<a class="nav__list__item" href="#expertise">Expertise</a>
+					<a class="nav__list__item" href="#statistic">Statistic</a>
+					<a class="nav__list__item" href="#work">Work</a>
+					<a class="nav__list__item" href="#story">Story</a>
+					<a class="nav__list__item" href="#client">Client</a>
+					<a class="nav__list__item" href="#contact">Contact</a>
+				</div>
+			</nav>
+
+			<ul class="header-buttons">
+				<li><a class="search-trigger" href="">Search<span></span>span></a></li>
+				<li><a class="nav-trigger" href="">Menu<span></span></a></li>
+			</ul>
+
+			<section class="intro">
+				<div class="intro__content">
+					<h1 class="intro__content__title">Awesome<br> <strong>personal template forever</strong></h1>
+
+					<div class="intro__content__action-wrapper">
+						<a class="button button__outline" href="#0">Get started</a>
+						<a class="button" href="#0">My portfolio</a>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<ul class="slider-nav">
+				<li><a class="slider-nav__prev" href="#0">Prev</a></li>
+				<li><a class="slider-nav__next" href="#0">Next</a></li>
+		</ul>
+	</div>
+</header>
+
 <!-- Main -->
 <main>
-
 	<!-- About Section -->
-	<section class="about clearfix">
+	<section id="about" class="about clearfix">
 		<div class="about__image"></div>
 		<!-- <img class="about__image" src="images/pic/pic-about.png" alt="Image" /> -->
 
@@ -102,7 +145,7 @@
 	</section>
 
 	<!-- My Service Section -->
-	<section class="service">
+	<section id="expertise" class="service">
 		<h2 class="title-border">
 			<span class="title">My service</span>
 		</h2>
@@ -191,7 +234,7 @@
 	</section>
 
 	<!-- My Statistic -->
-	<section class="statistic clearfix">
+	<section id="statistic" class="statistic clearfix">
 		<h2 class="title-border">
 			<span class="title">My statistic</span>
 		</h2>
@@ -199,26 +242,26 @@
 		<div class="statistic__unit">
 			<div class="statistic__unit__item">
 				<p class="statistic__unit__item__number">4609</p>
-				<i class="statstic__unit__item__bg ic-laptop"></i>
+				<i class="statistic__unit__item__bg ic-laptop"></i>
 				<h3 class="statistic__unit__item__text">Finished projects</h3>
 			</div>
 
 			<div class="statistic__unit__item">
 				<p class="statistic__unit__item__number">3470</p>
-				<i class="statstic__unit__item__bg ic-user"></i>
+				<i class="statistic__unit__item__bg ic-user"></i>
 				<h3 class="statistic__unit__item__text">Happy Client</h3>
 			</div>
 
 			<div class="statistic__unit__item">
 				<p class="statistic__unit__item__number">2908</p>
-				<i class="statstic__unit__item__bg ic-awards"></i>
+				<i class="statistic__unit__item__bg ic-awards"></i>
 				<h3 class="statistic__unit__item__text">Awards</h3>
 			</div>
 		</div>
 	</section>
 
 	<!-- My Work -->
-	<section class="portfolio clearfix">
+	<section id="work" class="portfolio clearfix">
 		<h2 class="title-border">
 			<span class="title">My Work</span>
 		</h2>
@@ -293,7 +336,7 @@
 	</section>
 
 	<!-- Recent Story -->
-	<section class="recent-story">
+	<section id="story" class="recent-story">
 		<h2 class="title-border">
 			<span class="title">Recent Story</span>
 		</h2>
@@ -362,7 +405,7 @@
 	</section>
 
 	<!-- Clients Feedback -->
-	<section class="testimonial">
+	<section id="client" class="testimonial">
 		<h2 class="title-border">
 			<span class="title">Clients Feedback</span>
 		</h2>
@@ -426,7 +469,7 @@
 	</section>
 
 	<!-- Contact -->
-	<section class="contact">
+	<section id="contact" class="contact">
 		<h2 class="title-border">
 			<span class="title">Get in touch</span>
 		</h2>
@@ -472,5 +515,7 @@
 		</form>
 	</section>
 </main>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>

@@ -1,0 +1,219 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.header__main
+	width: 100%
+	height: $nav-height-S
+
+	background: $dark-gray
+
+	+MQ(L)
+		background: $img-overlay
+		height: $nav-height-M
+
+	&__center
+		position: relative
+		width: 100%
+		height: 100%
+		margin: 0 auto
+
+		+MQ(L)
+			width: 90%
+			max-width: $max-width
+
+		& .logo
+			position: absolute
+			top: 0
+			left: 5%
+			bottom: auto
+			font-size: $font-size-h4
+			font-weight: $font-weigh-400
+			line-height: $nav-height-S
+			color: $white
+			+transition(color .2s ease)
+			z-index: $above-content
+
+			&:hover
+				color: $primary-color
+
+			& b
+				font-weight: $font-weigh-700
+
+			& span
+				color: $primary-color
+
+			+MQ(L)
+				left: auto
+				line-height: $nav-height-M
+
+		& .nav
+			&__list
+				position: absolute
+				top: 100%
+				width: 100%
+				background: $dark-gray
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15)
+				z-index: $above-content
+
+				+MQ(L)
+					padding-right: 56px
+					top: 0
+					left: auto
+					right: 0
+					width: auto
+					background: transparent
+					box-shadow: none
+
+				&__item
+					display: block
+					padding-left: 5%
+					width: 100%
+
+					line-height: $nav-height-S
+					border-top: 1px solid lighten($dark-gray, 1%)
+					color: $light-grey
+					+transition(all .2s ease)
+					+font-smoothing
+
+					+MQ(L)
+						display: inline-block
+						width: auto
+						margin-left: 24px
+						padding-left: 0
+
+						font-weight: $font-weigh-700
+						line-height: $nav-height-M
+						border-top: none
+						color: $white
+
+						&.active
+							box-shadow: 0 2px 0 $primary-color
+
+					&:hover, &.active
+						color: $primary-color
+
+		.header-buttons
+			position: absolute
+			display: inline-block
+			top: (($nav-height-S - 44px) / 2)
+			right: 5%
+
+			& li
+				display: inline-block
+
+			+MQ(L)
+				top: (($nav-height-M - 44px) / 2)
+				right: 0
+
+			.search-trigger, .nav-trigger
+				position: relative
+				display: block
+				width: 44px
+				height: 44px
+				overflow: hidden
+				white-space: nowrap
+				/* Hide text */
+				color: transparent
+				z-index: $above-content
+
+			.search-trigger
+				&::before, &::after
+					/* Search icon */
+					content: ''
+					position: absolute
+					+transition(opacity 0.3s ease)
+					/* Force Hardware Acceleration in WebKit */
+					+transform(translateZ(0))
+					-webkit-backface-visibility: hidden
+					backface-visibility: hidden
+
+				&::before
+					/* Lens */
+					top: 14px
+					left: 26px
+					width: 14px
+					height: 14px
+					border-radius: 50%
+					border: 2px solid $white
+
+				&::after
+					/* Handle */
+					height: 2px
+					width: 7px
+					background: $white
+					bottom: 15px
+					right: 0
+					+transform(rotate(45deg))
+
+				& span
+					/* Container for the X icon */
+					position: absolute
+					height: 100%
+					width: 100%
+					top: 0
+					left: 0
+
+					&::before, &::after
+						/* close icon */
+						content: ''
+						position: absolute
+						display: inline-block
+						height: 3px
+						width: 22px
+						top: 50%
+						margin-top: -2px
+						left: 50%
+						margin-left: -11px
+						background: $white
+						opacity: 0
+						/* Force Hardware Acceleration in WebKit */
+						+transform(translateZ(0))
+						-webkit-backface-visibility: hidden
+						backface-visibility: hidden
+						+transition(opacity 0.3s ease, transform 0.3s ease)
+
+						&::before
+							+transform(rotate(45deg))
+
+						&::after
+							+transform(rotate(-45deg))
+
+			.nav-trigger
+				span, span::before, span::after
+					/* hamburger icon in CSS */
+					position: absolute
+					display: inline-block
+					height: 2px
+					width: 18px
+					background: $white
+
+				span
+					/* line in the center */
+					position: absolute
+					top: 50%
+					right: 0
+					margin-top: -2px
+					+transition(background .3s .3s)
+
+					&::before
+						/* menu icon top line */
+						top: -5px
+
+					&::after
+						/* menu icon bottom line */
+						top: 5px
+
+				span::before, span::after
+					/* other 2 lines */
+					content: ''
+					right: 0
+					/* Force Hardware Acceleration in WebKit */
+					+transform(translateZ(0))
+					-webkit-backface-visibility: hidden
+					backface-visibility: hidden
+					transform-origin(0% 50%)
+					+transition(transform .3s .3s)
+
+				+MQ(L)
+					display: none

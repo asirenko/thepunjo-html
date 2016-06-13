@@ -1,0 +1,31 @@
+/* ----------------------------------------------------------------------------- */
+/* Twitter Feed */ 
+/* ----------------------------------------------------------------------------- */
+
+.twitter-feed
+	position: relative
+	padding: 60px 0
+	background: url('../images/pic/pic-twitter-feed.png') no-repeat 50% 50% / cover
+	+MQ(M)
+		padding: 120px 0
+
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $img-overlay
+
+	& .title-border
+		position: relative
+		color: $white
+
+	&__description
+		position: relative
+		text-align: center
+		color: $white
+
+	& span
+		color: $primary-color

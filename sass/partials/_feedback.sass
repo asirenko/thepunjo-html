@@ -1,0 +1,72 @@
+/* ----------------------------------------------------------------------------- */
+/* Clients Feedback */ 
+/* ----------------------------------------------------------------------------- */
+
+.testimonial 
+	width: 90%
+	max-width: 960px
+	margin: 0 auto
+	padding: 60px 0
+	+MQ(M)
+		padding: 120px 0
+
+	&__quote
+		+MQ(M)
+			float: left
+			width: (100% / 960 * 470)
+
+		&:last-child
+			+MQ(M)
+				float: right
+
+		&:not(:last-child) 
+			margin-bottom: 40px
+
+		&__blockquote 
+			position: relative
+			padding: 20px
+			background-color: $light-grey
+			&::after 
+				content: ''
+				position: absolute
+				width: 0
+				height: 0
+				left: 40px
+				bottom: -20px
+				border: 10px solid transparent
+				border-top-color: $light-grey
+
+			&__tittle 
+				padding-bottom: 4px
+				font-weight: bold
+				+font-smoothing
+
+			&__description 
+				color: $font-color
+				font-style: italic
+				+font-smoothing
+
+
+		&__author 
+			display: table
+			margin: 20px 0 0 20px
+
+			&__image 
+				width: 60px
+				height: 60px
+
+			&__info 
+				display: table-cell
+				padding-left: 10px
+				vertical-align: middle
+
+				&__name 
+					padding-bottom: 4px
+					color: $primary-color
+					font-weight: bold
+					+font-smoothing
+
+				&__position 
+					color: $font-color
+					font-style: italic
+					+font-smoothing

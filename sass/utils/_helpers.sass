@@ -1,0 +1,32 @@
+/* ----------------------------------------------------------------------------- */
+/* This file contains CSS helper classes */
+/* ----------------------------------------------------------------------------- */
+
+/* Main content containers */
+
+.container
+	width: 90%
+	// max-width: $max-width;
+	// margin: 60px auto
+	margin: 0 auto
+	padding: 60px 0
+
+	+MQ(L)
+		width: 100%
+		// margin: 120px auto
+		padding: 120px 0
+
+/* Clear inner floats */
+
+.clearfix::after
+	clear: both
+	content: ''
+	display: table
+
+/* Hide text while making it readable for screen readers */
+
+.hide-text
+	overflow: hidden
+	padding: 0
+	text-indent: 101%
+	white-space: nowrap

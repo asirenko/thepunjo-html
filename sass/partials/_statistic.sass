@@ -1,0 +1,87 @@
+/* ----------------------------------------------------------------------------- */
+/* My Statistic Section
+/* ----------------------------------------------------------------------------- */
+.statistic
+	@extend .container
+	width: 100%
+	position: relative
+	height: 100%
+	background: url('../images/pic/pic-statistic.png') no-repeat center center / cover
+
+	&::before 
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $img-overlay
+
+	& h2 
+		position: relative
+		width: 90%
+		color: $white
+
+	&__unit 
+		position: relative
+		max-width: $max-width
+		margin: 0 auto
+
+		+MQ(M)
+			height: 184px
+
+		&::before 
+			+MQ(M)
+				content: ''
+				display: inline-block
+				position: absolute
+				top: 50%
+				left: calc(50% - 350px)
+				width: $max-width - 260px
+				height: 2px
+				background-color: $white
+				text-align: center
+
+		&__item 
+			position: relative
+			float: none
+			width: 100%
+			text-align: center
+			margin-bottom: 40px
+
+			&:not(:last-child)
+				margin-bottom: 60px
+
+			+MQ(M)
+				float: left
+				width: (100% / 960 * 320)
+
+			&__number
+				color: $white
+				font-size: $font-size-h4
+				font-weight: $font-weigh-700
+				text-transform: uppercase
+
+			&__text
+				color: $white
+
+			&__bg
+				display: inline-block
+				width: 70px
+				height: 70px
+				margin: 32px 0
+
+				border-radius: 50px
+				background-color: $white
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				background-size: 35px
+
+.ic-laptop 
+	background-image: url('../images/ic/svg/ic-laptop.svg')
+
+.ic-user 
+	background-image: url('../images/ic/svg/ic-user.svg')
+
+.ic-awards 
+	background-image: url('../images/ic/svg/ic-awards.svg')

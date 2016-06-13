@@ -1,0 +1,95 @@
+/* ----------------------------------------------------------------------------- */
+/* My Service Section
+/* ----------------------------------------------------------------------------- */
+.service
+	@extend .container
+	padding-top: 0
+
+	+MQ(M)
+		max-width: $max-width
+
+	&__list
+		padding-top: 8px
+
+		+MQ(M)
+			width: calc(100% + 10px)
+
+		&__item
+			display: block
+			text-align: center
+			margin-bottom: 10px
+
+			+MQ(M)
+				display: inline-block
+				vertical-align: top
+				width: calc(25% - 10px)
+				margin: 0 6px 10px 0
+
+			& a
+				display: block;
+				box-shadow: inset 0 0 0 1px $light-grey
+				background: $white
+				padding: 28px 100% / 200 * 18
+				+transition(all .2s ease)
+
+			& a:hover
+				background: $primary-color
+				box-shadow: none
+
+			& a:hover i::before
+				background-position-y: 100%
+
+			& a:hover &__ic-service
+				background: $white
+
+			& a:hover h3
+				color: $white
+
+			& a:hover p
+				color: $white
+
+			&__ic-service
+				position: relative
+				display: inline-block
+				margin-top: 4px
+				width: 54px
+				height: 54px
+				border-radius: 50px
+				background: $grey
+
+				&::before
+					content: ''
+					position: absolute
+					left: 50%
+					top: 50%
+					width: 24px
+					height: 24px
+					margin: -12px 0 0 -12px
+					background: url('../images/ic/svg/ic-service.svg') no-repeat 0 0 / 800% auto
+
+			& .calendar::before
+				background-position: -24px 0
+
+			& .math::before
+				background-position: -48px 0
+
+			& .joomla::before
+				background-position: -72px 0
+
+			& .global::before
+				background-position: -96px 0
+
+			& .target::before
+				background-position: -120px 0
+
+			& .theme::before
+				background-position: -144px 0
+
+			& .seo::before
+				background-position: -168px 0
+
+			&__title
+				margin-top: 20px
+
+			&__description
+				margin-top: 10px

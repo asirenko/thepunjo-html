@@ -1,0 +1,137 @@
+/* ----------------------------------------------------------------------------- */
+/* My Work Section
+/* ----------------------------------------------------------------------------- */
+.portfolio
+	@extend .container
+	padding-bottom: 0
+
+	&__nav 
+		text-align: center
+
+		&__filter 
+			position: relative
+			+MQ(M)
+				display: none
+
+			&::after 
+				content: ''
+				position: absolute
+				width: 16px
+				height: 16px
+				top: calc(50% - 8px)
+				right: 20px
+				background: url('../images/ic/svg/ic-arrow.svg') no-repeat 50% 50%
+
+				pointer-events: none
+
+			& .filter
+				cursor: pointer
+				font-size: $font-size-base
+				width: 100%
+				padding: 20px
+				-webkit-appearance: none
+				-moz-appearance: none
+				-ms-appearance: none
+				-o-appearance: none
+				appearance: none
+				box-shadow: none
+				border-radius: 0
+				color: $font-color
+				background-color: $white
+				border: 1px solid $light-grey
+
+				&:focus 
+					outline: none
+
+		&__item
+			display: none
+			+transition(all .2s ease)
+			+font-smoothing
+
+			+MQ(M)
+				display: inline-block
+				padding: 15px
+				color: $grey
+
+			&:hover
+				color: $white
+				background-color: $primary-color
+
+			&::after
+				+MQ(M)
+					opacity: 0
+					transition: opacity .2s
+
+		& .active
+			color: $white
+			background-color: $primary-color
+
+	&__list
+		margin-top: 10px
+
+		+MQ(M)
+			margin-top: 60px
+
+		&__item
+			position: relative
+			margin-bottom: 10px
+			cursor: pointer
+
+			+MQ(M)
+				float: left
+				// margin-bottom: (100% / 1170 * 20)
+				margin-bottom: 23px
+
+			&::after
+				content: ''
+				position: absolute
+				top: 20px
+				right: 20px
+				width: 50px
+				height: 50px
+				border-radius: 50px
+				background: $primary-color url('../images/ic/svg/ic-search.svg') no-repeat 50% 50% / 24px
+				opacity: 1
+
+				+MQ(M)
+					opacity: 0
+					+transition(opacity .2s ease)
+
+			&:hover &__caption, &:hover::after, &:hover::after
+				+MQ(M)
+					opacity: 1
+
+			&__pic 
+				display: block
+				width: 100%
+
+			&__caption 
+				position: absolute
+				width: 100%
+				padding: 20px
+				bottom: 0
+				left: 0
+				background-color: $img-overlay
+
+				+MQ(M)
+					opacity: 0
+					+transition(all .2s ease)
+
+				& h3 
+					color: $white
+
+				&__description 
+					color: $grey
+					white-space: nowrap
+					overflow: hidden
+					text-overflow: ellipsis
+
++MQ(M)
+	.two-thirds 
+		width: (100% / 1170 * (1130 / 3))
+
+	.one-third 
+		width: (100% / 1170 * (1110 / 4))
+
+	.margin-right 
+		margin-right: (100% / 1170 * 20)
