@@ -49,14 +49,14 @@ table {
 /* This file contains CSS helper classes */
 /* ----------------------------------------------------------------------------- */
 /* Main content containers */
-.container, .about, .service, .statistic, .portfolio, .recent-story {
+.container, .about, .service, .statistic, .portfolio, .recent-story, .testimonial, .twitter-feed, .contact {
   width: 90%;
   margin: 0 auto;
   padding: 60px 0;
 }
 
 @media only screen and (min-width: 1100px) {
-  .container, .about, .service, .statistic, .portfolio, .recent-story {
+  .container, .about, .service, .statistic, .portfolio, .recent-story, .testimonial, .twitter-feed, .contact {
     width: 100%;
     padding: 120px 0;
   }
@@ -254,24 +254,60 @@ p {
   }
 }
 
+.header__main__center .nav {
+  float: right;
+  margin-right: 5%;
+  width: 44px;
+  height: 100%;
+  background: url(../images/ic/svg/ic-menu.svg) no-repeat center center;
+  background-size: 44px 44px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1100px) {
+  .header__main__center .nav {
+    width: auto;
+    height: auto;
+    background: none;
+    cursor: auto;
+  }
+}
+
 .header__main__center .nav__list {
   position: absolute;
-  top: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
   background: #1b1b1b;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
   z-index: 3;
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.header__main__center .nav__list.is-visible {
+  -moz-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
 }
 
 @media only screen and (min-width: 1100px) {
   .header__main__center .nav__list {
-    padding-right: 56px;
-    top: 0;
     left: auto;
     right: 0;
     width: auto;
     background: transparent;
     box-shadow: none;
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -309,189 +345,6 @@ p {
 
 .header__main__center .nav__list__item:hover, .header__main__center .nav__list__item.active {
   color: #f39c12;
-}
-
-.header__main__center .header-buttons {
-  position: absolute;
-  display: inline-block;
-  top: 3px;
-  right: 5%;
-}
-
-.header__main__center .header-buttons li {
-  display: inline-block;
-}
-
-@media only screen and (min-width: 1100px) {
-  .header__main__center .header-buttons {
-    top: 25px;
-    right: 0;
-  }
-}
-
-.header__main__center .header-buttons .search-trigger, .header__main__center .header-buttons .nav-trigger {
-  position: relative;
-  display: block;
-  width: 44px;
-  height: 44px;
-  overflow: hidden;
-  white-space: nowrap;
-  /* Hide text */
-  color: transparent;
-  z-index: 3;
-}
-
-.header__main__center .header-buttons .search-trigger::before, .header__main__center .header-buttons .search-trigger::after {
-  /* Search icon */
-  content: '';
-  position: absolute;
-  -webkit-transition: opacity 0.3s ease;
-  -moz-transition: opacity 0.3s ease;
-  -ms-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-  /* Force Hardware Acceleration in WebKit */
-  -moz-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.header__main__center .header-buttons .search-trigger::before {
-  /* Lens */
-  top: 14px;
-  left: 26px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-
-.header__main__center .header-buttons .search-trigger::after {
-  /* Handle */
-  height: 2px;
-  width: 7px;
-  background: #fff;
-  bottom: 15px;
-  right: 0;
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.header__main__center .header-buttons .search-trigger span {
-  /* Container for the X icon */
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.header__main__center .header-buttons .search-trigger span::before, .header__main__center .header-buttons .search-trigger span::after {
-  /* close icon */
-  content: '';
-  position: absolute;
-  display: inline-block;
-  height: 3px;
-  width: 22px;
-  top: 50%;
-  margin-top: -2px;
-  left: 50%;
-  margin-left: -11px;
-  background: #fff;
-  opacity: 0;
-  /* Force Hardware Acceleration in WebKit */
-  -moz-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: opacity 0.3s ease, transform 0.3s ease;
-  -moz-transition: opacity 0.3s ease, transform 0.3s ease;
-  -ms-transition: opacity 0.3s ease, transform 0.3s ease;
-  -o-transition: opacity 0.3s ease, transform 0.3s ease;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.header__main__center .header-buttons .search-trigger span::before::before, .header__main__center .header-buttons .search-trigger span::after::before {
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.header__main__center .header-buttons .search-trigger span::before::after, .header__main__center .header-buttons .search-trigger span::after::after {
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.header__main__center .header-buttons .nav-trigger span, .header__main__center .header-buttons .nav-trigger span::before, .header__main__center .header-buttons .nav-trigger span::after {
-  /* hamburger icon in CSS */
-  position: absolute;
-  display: inline-block;
-  height: 2px;
-  width: 18px;
-  background: #fff;
-}
-
-.header__main__center .header-buttons .nav-trigger span {
-  /* line in the center */
-  position: absolute;
-  top: 50%;
-  right: 0;
-  margin-top: -2px;
-  -webkit-transition: background 0.3s 0.3s;
-  -moz-transition: background 0.3s 0.3s;
-  -ms-transition: background 0.3s 0.3s;
-  -o-transition: background 0.3s 0.3s;
-  transition: background 0.3s 0.3s;
-}
-
-.header__main__center .header-buttons .nav-trigger span::before {
-  /* menu icon top line */
-  top: -5px;
-}
-
-.header__main__center .header-buttons .nav-trigger span::after {
-  /* menu icon bottom line */
-  top: 5px;
-}
-
-.header__main__center .header-buttons .nav-trigger span::before, .header__main__center .header-buttons .nav-trigger span::after {
-  /* other 2 lines */
-  content: '';
-  right: 0;
-  /* Force Hardware Acceleration in WebKit */
-  -moz-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: transform 0.3s 0.3s;
-  -moz-transition: transform 0.3s 0.3s;
-  -ms-transition: transform 0.3s 0.3s;
-  -o-transition: transform 0.3s 0.3s;
-  transition: transform 0.3s 0.3s;
-}
-
-@media only screen and (min-width: 1100px) {
-  .header__main__center .header-buttons .nav-trigger {
-    display: none;
-  }
 }
 
 .header {
@@ -1249,16 +1102,7 @@ p {
 /* Clients Feedback */
 /* ----------------------------------------------------------------------------- */
 .testimonial {
-  width: 90%;
   max-width: 960px;
-  margin: 0 auto;
-  padding: 60px 0;
-}
-
-@media only screen and (min-width: 768px) {
-  .testimonial {
-    padding: 120px 0;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1345,14 +1189,8 @@ p {
 /* ----------------------------------------------------------------------------- */
 .twitter-feed {
   position: relative;
-  padding: 60px 0;
+  width: 100%;
   background: url("../images/pic/pic-twitter-feed.png") no-repeat 50% 50%/cover;
-}
-
-@media only screen and (min-width: 768px) {
-  .twitter-feed {
-    padding: 120px 0;
-  }
 }
 
 .twitter-feed::before {
@@ -1367,11 +1205,15 @@ p {
 
 .twitter-feed .title-border {
   position: relative;
+  width: 90%;
   color: #fff;
 }
 
 .twitter-feed__description {
   position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
   color: #fff;
 }
@@ -1384,37 +1226,46 @@ p {
 /* Contact */
 /* ----------------------------------------------------------------------------- */
 .contact {
-  width: 90%;
   max-width: 960px;
-  margin: 0 auto;
-  padding: 60px 0;
 }
 
-@media only screen and (min-width: 768px) {
-  .contact {
-    padding: 120px 0;
-  }
-}
-
-.contact-form legend {
+.contact .contact-form legend {
+  max-width: 600px;
   margin-bottom: 40px;
+  text-align: center;
+  line-height: 24px;
 }
 
-.contact-form input {
-  border-bottom: 1px solid #b0b0b0;
-  padding: 50px 0;
-}
-
-.contact-form input:focus {
-  border-bottom-color: #f39c12;
-}
-
-input, textarea {
-  display: block;
+.contact .contact-form__item {
   width: 100%;
-  border: none;
+  float: left;
+  padding-top: 36px;
+}
+
+.contact .contact-form__item .label {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.contact .contact-form .half-width {
+  width: 48%;
+  margin-right: 4%;
+}
+
+.contact .contact-form .half-width:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.contact .contact-form input[type="text"], .contact .contact-form input[type="email"], .contact .contact-form textarea {
+  display: block;
+  height: 42px;
+  width: 100%;
+  padding: 0 16px;
   color: #262626;
+  font-size: 1.4rem;
+  border: none;
   border-radius: 0;
+  border-bottom: 1px solid #bbbbbb;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -1422,8 +1273,238 @@ input, textarea {
   appearance: none;
 }
 
-input:focus, textarea:focus {
+.contact .contact-form textarea {
+  min-height: 100px;
+  padding-top: 14px;
+}
+
+.contact .contact-form input:focus, .contact .contact-form textarea:focus {
+  border-bottom-color: #f39c12;
   outline: none;
+}
+
+.contact .contact-form input[type="submit"] {
+  float: right;
+  margin-top: 36px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* My Map Section */
+/* ----------------------------------------------------------------------------- */
+#google-map {
+  position: relative;
+}
+
+#google-map .address {
+  display: none;
+  position: absolute;
+  padding: 32px;
+  text-align: center;
+  background-color: #f39c12;
+  color: #fff;
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#google-map .address__office {
+  margin-bottom: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#google-map .address p {
+  color: #fff;
+}
+
+#google-map .address b {
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 768px) {
+  #google-map .address {
+    display: block;
+    width: auto;
+    margin-right: 50px;
+    top: 50%;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    text-align: left;
+  }
+}
+
+#google-map__container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  #google-map__container {
+    height: 300px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  #google-map__container {
+    height: 600px;
+  }
+}
+
+#google-map__zoom-in, #google-map__zoom-out {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: #f39c12;
+  background-repeat: no-repeat;
+  background-size: 32px 64px;
+  background-image: url("../images/ic/svg/ic-controller.svg");
+}
+
+.no-touch #google-map__zoom-in:hover, .no-touch #google-map__zoom-out:hover {
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  #google-map__zoom-in, #google-map__zoom-out {
+    margin-left: 50px;
+  }
+}
+
+#google-map__zoom-in {
+  background-position: 50% 0;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  #google-map__zoom-in {
+    margin-left: 50px;
+  }
+}
+
+#google-map__zoom-out {
+  background-position: 50% -32px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Follow Me */
+/* ----------------------------------------------------------------------------- */
+.follow-me {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .follow-me {
+    padding: 120px 0;
+  }
+}
+
+.follow-me .socials {
+  text-align: center;
+}
+
+.follow-me .socials__list__item {
+  display: inline-block;
+}
+
+.follow-me .socials__list__item a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("../images/ic/svg/ic-socials.svg") no-repeat center center;
+  box-shadow: inset 0 0 0 1px #ececec;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: background-color 0.2s, box-shadow 0.2s;
+  -moz-transition: background-color 0.2s, box-shadow 0.2s;
+  -ms-transition: background-color 0.2s, box-shadow 0.2s;
+  -o-transition: background-color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.follow-me .socials__list__item a:hover {
+  box-shadow: inset 0 0 0 1px #f39c12;
+  background-color: #f39c12;
+}
+
+.follow-me .socials__list__item a.facebook {
+  background-position: 0 0;
+}
+
+.follow-me .socials__list__item a.facebook:hover {
+  background-position: 0 -32px;
+}
+
+.follow-me .socials__list__item a.google {
+  background-position: -32px 0;
+}
+
+.follow-me .socials__list__item a.google:hover {
+  background-position: -32px -32px;
+}
+
+.follow-me .socials__list__item a.twitter {
+  background-position: -64px 0;
+}
+
+.follow-me .socials__list__item a.twitter:hover {
+  background-position: -64px -32px;
+}
+
+.follow-me .socials__list__item a.linkedin {
+  background-position: -96px 0;
+}
+
+.follow-me .socials__list__item a.linkedin:hover {
+  background-position: -96px -32px;
+}
+
+.follow-me .socials__list__item a.pinterest {
+  background-position: -128px 0;
+}
+
+.follow-me .socials__list__item a.pinterest:hover {
+  background-position: -128px -32px;
+}
+
+.follow-me .socials__list__item a.youtube {
+  background-position: -160px 0;
+}
+
+.follow-me .socials__list__item a.youtube:hover {
+  background-position: -160px -32px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Footer Section */
+/* ----------------------------------------------------------------------------- */
+.copyright {
+  display: table;
+  width: 100%;
+  height: 92px;
+  text-align: center;
+  background-color: #f39c12;
+}
+
+.copyright__description {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.copyright__description a {
+  color: #fff;
 }
 
 /* Button style */

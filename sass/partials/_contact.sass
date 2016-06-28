@@ -3,37 +3,58 @@
 /* ----------------------------------------------------------------------------- */
 
 .contact
-	width: 90%
-	max-width: 960px
-	margin: 0 auto
-	padding: 60px 0
+	@extend .container
+	max-width: $max-width
 
-	+MQ(M)
-		padding: 120px 0
+	.contact-form
+		& legend
+			max-width: 600px
+			margin-bottom: 40px
+			text-align: center
+			line-height: $line-height-24
 
+		&__item
+			width: 100%
+			float: left
+			padding-top: 36px
 
-.contact-form legend
-	margin-bottom: 40px
+			& .label
+				font-size: $font-size-h3
+				cursor: pointer
 
-.contact-form input
-	border-bottom: 1px solid #b0b0b0
-	padding: 50px 0
+		& .half-width
+			width: 48%
+			margin-right: 4%
 
-.contact-form input:focus
-	border-bottom-color: $primary-color
+			&:nth-of-type(2n)
+				margin-right: 0
 
+		& input[type="text"], & input[type="email"], & textarea
+			display: block
+			height: 42px
+			width: 100%
+			padding: 0 16px
+			color: $secondary-color
+			font-size: $font-size-base
+			border: none
+			border-radius: 0
+			border-bottom: 1px solid $grey
+			-webkit-appearance: none
+			-moz-appearance: none
+			-ms-appearance: none
+			-o-appearance: none
+			appearance: none
 
-input, textarea
-	display: block
-	width: 100%
-	border: none
-	color: $secondary-color
-	border-radius: 0
-	-webkit-appearance: none
-	-moz-appearance: none
-	-ms-appearance: none
-	-o-appearance: none
-	appearance: none
+		& textarea
+			min-height: 100px
+			padding-top: 14px
 
-input:focus, textarea:focus 
-	outline: none
+		& input:focus, & textarea:focus
+			border-bottom-color: $primary-color
+			outline: none
+
+		input[type="submit"]
+			float: right
+			margin-top: 36px
+			border: none
+			cursor: pointer

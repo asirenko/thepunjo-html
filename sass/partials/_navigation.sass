@@ -48,22 +48,41 @@
 				line-height: $nav-height-M
 
 		& .nav
+			float: right
+			margin-right: 5%
+
+			width: 44px
+			height: 100%
+
+			background: url(../images/ic/svg/ic-menu.svg) no-repeat center center
+			background-size: 44px 44px
+			cursor: pointer
+
+			+MQ(L)
+				width: auto
+				height: auto
+				background: none
+				cursor: auto
+
 			&__list
 				position: absolute
-				top: 100%
+				top: 0
+				left: 0
 				width: 100%
 				background: $dark-gray
 				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15)
 				z-index: $above-content
+				+transform(translateY(-100%))
+				&.is-visible
+					+transform(translateY($nav-height-S))
 
 				+MQ(L)
-					padding-right: 56px
-					top: 0
 					left: auto
 					right: 0
 					width: auto
 					background: transparent
 					box-shadow: none
+					+transform(translateY(0))
 
 				&__item
 					display: block
@@ -92,128 +111,3 @@
 
 					&:hover, &.active
 						color: $primary-color
-
-		.header-buttons
-			position: absolute
-			display: inline-block
-			top: (($nav-height-S - 44px) / 2)
-			right: 5%
-
-			& li
-				display: inline-block
-
-			+MQ(L)
-				top: (($nav-height-M - 44px) / 2)
-				right: 0
-
-			.search-trigger, .nav-trigger
-				position: relative
-				display: block
-				width: 44px
-				height: 44px
-				overflow: hidden
-				white-space: nowrap
-				/* Hide text */
-				color: transparent
-				z-index: $above-content
-
-			.search-trigger
-				&::before, &::after
-					/* Search icon */
-					content: ''
-					position: absolute
-					+transition(opacity 0.3s ease)
-					/* Force Hardware Acceleration in WebKit */
-					+transform(translateZ(0))
-					-webkit-backface-visibility: hidden
-					backface-visibility: hidden
-
-				&::before
-					/* Lens */
-					top: 14px
-					left: 26px
-					width: 14px
-					height: 14px
-					border-radius: 50%
-					border: 2px solid $white
-
-				&::after
-					/* Handle */
-					height: 2px
-					width: 7px
-					background: $white
-					bottom: 15px
-					right: 0
-					+transform(rotate(45deg))
-
-				& span
-					/* Container for the X icon */
-					position: absolute
-					height: 100%
-					width: 100%
-					top: 0
-					left: 0
-
-					&::before, &::after
-						/* close icon */
-						content: ''
-						position: absolute
-						display: inline-block
-						height: 3px
-						width: 22px
-						top: 50%
-						margin-top: -2px
-						left: 50%
-						margin-left: -11px
-						background: $white
-						opacity: 0
-						/* Force Hardware Acceleration in WebKit */
-						+transform(translateZ(0))
-						-webkit-backface-visibility: hidden
-						backface-visibility: hidden
-						+transition(opacity 0.3s ease, transform 0.3s ease)
-
-						&::before
-							+transform(rotate(45deg))
-
-						&::after
-							+transform(rotate(-45deg))
-
-			.nav-trigger
-				span, span::before, span::after
-					/* hamburger icon in CSS */
-					position: absolute
-					display: inline-block
-					height: 2px
-					width: 18px
-					background: $white
-
-				span
-					/* line in the center */
-					position: absolute
-					top: 50%
-					right: 0
-					margin-top: -2px
-					+transition(background .3s .3s)
-
-					&::before
-						/* menu icon top line */
-						top: -5px
-
-					&::after
-						/* menu icon bottom line */
-						top: 5px
-
-				span::before, span::after
-					/* other 2 lines */
-					content: ''
-					right: 0
-					/* Force Hardware Acceleration in WebKit */
-					+transform(translateZ(0))
-					-webkit-backface-visibility: hidden
-					backface-visibility: hidden
-					transform-origin(0% 50%)
-					+transition(transform .3s .3s)
-
-				+MQ(L)
-					display: none

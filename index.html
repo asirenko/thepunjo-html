@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Favicon -->
-	<!-- <link rel="icon" type="image/png" href="images/favicon.png" /> -->
+	<link rel="icon" type="image/png" href="images/ic/png/favicon.png" />
 </head>
 <body>
 
@@ -43,11 +43,6 @@
 					<a class="nav__list__item" href="#contact">Contact</a>
 				</div>
 			</nav>
-
-			<ul class="header-buttons">
-				<li><a class="search-trigger" href="">Search<span></span>span></a></li>
-				<li><a class="nav-trigger" href="">Menu<span></span></a></li>
-			</ul>
 
 			<section class="intro">
 				<div class="intro__content">
@@ -73,7 +68,6 @@
 	<!-- About Section -->
 	<section id="about" class="about clearfix">
 		<div class="about__image"></div>
-		<!-- <img class="about__image" src="images/pic/pic-about.png" alt="Image" /> -->
 
 		<div class="about__aside">
 			<h2 class="title-border">
@@ -473,9 +467,6 @@
 		<h2 class="title-border">
 			<span class="title">Get in touch</span>
 		</h2>
-<!-- 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vita eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum.
-		</p> -->
 
 		<form class="contact-form">
 			<fieldset>
@@ -483,39 +474,84 @@
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vita eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum.
 				</legend>
 
-				<div>
+				<div class="contact-form__item half-width clearfix">
 					<label class="label" for="name">Name</label>
 					<input class="user" type="text" name="name" id="name" required="">
 				</div>
 
-				<div>
+				<div class="contact-form__item half-width clearfix">
 					<label class="label" for="subject">Subject</label>
 					<input class="subject" type="text" name="subject" id="subject" required="">
 				</div>
 
-				<div>
-					<label class="label" for="time">Time <span>( From 9am to 5pm )</span></label>
-					<input class="time" type="text" name="time" id="time" required="">
-				</div>
-
-				<div>
+				<div class="contact-form__item half-width clearfix">
 					<label class="label" for="email">Email</label>
 					<input class="email error" type="email" name="email" id="email" required="">
 				</div>
 
-				<div>
+				<div class="contact-form__item half-width clearfix">
+					<label class="label" for="time">Time (From 9am to 5pm)</label>
+					<input class="time" type="text" name="time" id="time" required="">
+				</div>
+
+				<div class="contact-form__item clearfix">
 					<label class="label" for="textarea">Your Message</label>
 					<textarea class="message" name="textarea" id="textarea" required=""></textarea>
 				</div>
 
-				<div>
-					<input type="submit" value="Make Request">
+				<div class="clearfix">
+					<input class="button" type="submit" value="Make Request">
 				</div>
 			</fieldset>
 		</form>
 	</section>
+
+	<!-- Google Map -->
+	<section id="google-map">
+			<!-- #google-container will contain the map -->
+			<div id="google-map__container"></div>
+
+			<div id="google-map__zoom-in"></div>
+			<div id="google-map__zoom-out"></div>
+
+			<address class="address">
+				<div class="address__office">
+					<b>Office:</b>
+					<p>795 Folsom Ave, Suite 600<br> San Francisco, CA 94107</p>
+				</div>
+
+				<p class="address__phone"><b>Phone: </b>(91) 8547 632521</p>
+				<p class="address__fax"><b>Fax:</b> (91) 11 4752 1433</p>
+				<p class="address__email"><b>Email:</b> info@canvas.com</p>
+			</address>
+	</section>
+
+	<!-- Follow Me -->
+	<section class="follow-me">
+		<h2 class="title-border">
+			<span class="title">Follow Me</span>
+		</h2>
+
+		<div class="socials">
+			<ul class="socials__list">
+				<li class="socials__list__item"><a class="facebook" href="#0">Facebook</a></li>
+				<li class="socials__list__item"><a class="google" href="#0">Google</a></li>
+				<li class="socials__list__item"><a class="twitter" href="#0">Twitter</a></li>
+				<li class="socials__list__item"><a class="linkedin" href="#0">LinkedIn</a></li>
+				<li class="socials__list__item"><a class="pinterest" href="#0">Pinterest</a></li>
+				<li class="socials__list__item"><a class="youtube" href="#0">YouTube</a></li>
+			</ul>
+		</div>
+	</section>
 </main>
+
+<!-- Follow Me -->
+<footer class="copyright">
+	<p class="copyright__description">Copyright 2015 <a href="#0">ThePunjo</a> | All Rights Reserved</p>
+</footer>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-EDTJ5_uU3zBIX7-wNTu-qSZr1DO5Dw"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>

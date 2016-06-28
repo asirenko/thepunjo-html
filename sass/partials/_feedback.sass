@@ -2,13 +2,9 @@
 /* Clients Feedback */ 
 /* ----------------------------------------------------------------------------- */
 
-.testimonial 
-	width: 90%
-	max-width: 960px
-	margin: 0 auto
-	padding: 60px 0
-	+MQ(M)
-		padding: 120px 0
+.testimonial
+	@extend .container
+	max-width: $max-width
 
 	&__quote
 		+MQ(M)
@@ -45,7 +41,6 @@
 				color: $font-color
 				font-style: italic
 				+font-smoothing
-
 
 		&__author 
 			display: table
