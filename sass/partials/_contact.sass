@@ -23,8 +23,11 @@
 				cursor: pointer
 
 		& .half-width
-			width: 48%
+			width: 100%
 			margin-right: 4%
+
+			+MQ(M)
+				width: 48%
 
 			&:nth-of-type(2n)
 				margin-right: 0

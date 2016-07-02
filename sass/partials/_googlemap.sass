@@ -48,10 +48,10 @@
 			height: 600px
 
 	&__zoom-in, &__zoom-out
+		display: none
 		height: 32px
 		width: 32px
 		cursor: pointer
-		margin-left: 10px
 		background-color: $primary-color
 		background-repeat: no-repeat
 		background-size: 32px 64px
@@ -62,6 +62,7 @@
 
 		+MQ(M)
 			margin-left: 50px
+			display: block
 
 	&__zoom-in
 		background-position: 50% 0
