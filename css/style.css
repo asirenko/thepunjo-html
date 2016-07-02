@@ -1248,8 +1248,14 @@ p {
 }
 
 .contact .contact-form .half-width {
-  width: 48%;
+  width: 100%;
   margin-right: 4%;
+}
+
+@media only screen and (min-width: 768px) {
+  .contact .contact-form .half-width {
+    width: 48%;
+  }
 }
 
 .contact .contact-form .half-width:nth-of-type(2n) {
@@ -1358,10 +1364,10 @@ p {
 }
 
 #google-map__zoom-in, #google-map__zoom-out {
+  display: none;
   height: 32px;
   width: 32px;
   cursor: pointer;
-  margin-left: 10px;
   background-color: #f39c12;
   background-repeat: no-repeat;
   background-size: 32px 64px;
@@ -1375,6 +1381,7 @@ p {
 @media only screen and (min-width: 768px) {
   #google-map__zoom-in, #google-map__zoom-out {
     margin-left: 50px;
+    display: block;
   }
 }
 
